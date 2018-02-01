@@ -43,6 +43,7 @@ class Book
     private $author;
 
     /**
+     * YYYY-MM-DD
      * @ORM\Column(type="date")
      * @Assert\Date()
      * @Assert\NotNull()
