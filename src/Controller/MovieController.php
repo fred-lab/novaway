@@ -2,18 +2,48 @@
 
 namespace App\Controller;
 
+use App\Entity\Movie;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class MovieController
+ * @package App\Controller
+ * @Route("/admin")
+ */
 class MovieController extends Controller
 {
     /**
-     * @Route("/movie", name="movie")
+     * Show a movie
+     * @Route("/movie/{movie}", name="admin_movie_show", requirements={"movie"="\d+"})
+     * @Method("GET")
+     * @param Movie $movie
      */
-    public function index()
+    public function show(Movie $movie)
     {
-        // replace this line with your own code!
-        return $this->render('@Maker/demoPage.html.twig', [ 'path' => str_replace($this->getParameter('kernel.project_dir').'/', '', __FILE__) ]);
+
+    }
+
+    /**
+     * Edit a movie
+     * @Route("/movie/edit/{movie}", name="admin_movie_edit", requirements={"movie"="\d+"})
+     * @Method("PUT")
+     * @param Movie $movie
+     */
+    public function edit(Movie $movie)
+    {
+
+    }
+
+    /**
+     * Delete a movie
+     * @Route("movie/delete/{movie}", name="admin_movie_delete", requirements={"movie"="\d+"})
+     * @Method("POST")
+     * @param Movie $movie
+     */
+    public function delete(Movie $movie)
+    {
+
     }
 }

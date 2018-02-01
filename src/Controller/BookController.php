@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Book;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,11 +16,35 @@ use Symfony\Component\HttpFoundation\Response;
 class BookController extends Controller
 {
     /**
-     * @Route("/book", name="book")
+     * Show a book
+     * @Route("/book/{book}", name="admin_book_show", requirements={"book"="\d+"})
+     * @Method("GET")
+     * @param Book $book
      */
-    public function index()
+    public function show(Book $book)
     {
-        // replace this line with your own code!
-        return $this->render('@Maker/demoPage.html.twig', [ 'path' => str_replace($this->getParameter('kernel.project_dir').'/', '', __FILE__) ]);
+
+    }
+
+    /**
+     * Edit a book
+     * @Route("/book/edit/{book}", name="admin_book_edit", requirements={"book"="\d+"})
+     * @Method("PUT")
+     * @param Book $book
+     */
+    public function edit(Book $book)
+    {
+
+    }
+
+    /**
+     * Delete a book
+     * @Route("book/delete/{book}", name="admin_book_delete", requirements={"book"="\d+"})
+     * @Method("POST")
+     * @param Book $book
+     */
+    public function delete(Book $book)
+    {
+
     }
 }

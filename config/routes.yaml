@@ -1,3 +1,7 @@
+admin:
+    resource: ../src/Controller/AdminController.php
+    type: annotation
+
 book:
     resource: ../src/Controller/BookController.php
     type: annotation
