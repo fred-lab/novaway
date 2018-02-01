@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /** *
  * @ORM\Entity(repositoryClass="App\Repository\BookRepository")
@@ -19,36 +20,53 @@ class Book
 
     /**
      * @ORM\Column(type="string", length=20, unique=true)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Isbn(message="Cette valeur ne correspond pas à un numéroe ISBN standard")
      */
     private $isnb;
 
     /**
      * @ORM\Column(type="string", length=120)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3", max="120")
      */
     private $title;
 
     /**
      * @ORM\Column(type="string", length=120)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Length(min="3", max="120")
      */
     private $author;
 
     /**
      * @ORM\Column(type="date")
+     * @Assert\Date()
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
      */
     private $releaseDate;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Assert\Range(min="1", max="5000")
+     * @Assert\Type(type="integer")
      */
     private $pages;
 
     /**
      * @ORM\Column(type="text", nullable=true)
+     * @Assert\Length(min="5", max="1000")
      */
     private $resume;
 
     /**
      * @ORM\Column(type="smallint", nullable=true)
+     * @Assert\Type(type="integer")
+     * @Assert\Range(min="0", max="10000")
      */
     private $price;
 
