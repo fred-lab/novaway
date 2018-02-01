@@ -6,6 +6,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class BookController
+ * @package App\Controller
+ * @Route("/admin")
+ */
 class BookController extends Controller
 {
     /**
