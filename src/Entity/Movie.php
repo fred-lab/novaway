@@ -42,7 +42,7 @@ class Movie
     private $director;
 
     /**
-     * @ORM\Column(type="simple_array", length=1000)
+     * @ORM\Column(type="string", length=1000)
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Length(min="3", max="1000")
@@ -155,20 +155,27 @@ class Movie
     }
 
     /**
-     * @return mixed
+     * @return array
      */
     public function getActors()
     {
-        return $this->actors;
+        return explode(';', $this->actors);
     }
 
     /**
-     * @param mixed $actors
+     * @param string $actors
      * @return Movie
      */
-    public function setActors($actors): Movie
+    public function setActors(string $actors): Movie
     {
-        $this->actors = $actors;
+        $actors = explode(';', $actors);
+        $trimArray = [];
+
+        foreach ($actors as $key => $actor){
+            $trimArray[$key] = trim($actor);
+        }
+
+        $this->actors = implode(';', $trimArray);
 
         return $this;
     }
