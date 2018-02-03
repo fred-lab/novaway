@@ -35,6 +35,7 @@
                 <p class="list-group-item">N° ISNB : {{ book.isnb }}</p>
             </div>
             <a href="{{ path('admin_index') }}" class="btn .btn-lg btn-outline-primary">Retour à l'accueil</a>
+            <a href="{{ path('admin_book_edit', {'book' : book.id}) }}" class="btn .btn-lg btn-outline-success">Editer ce livre</a>
             <a href="{{ path('admin_book_delete', {'book' : book.id}) }}" class="btn .btn-lg btn-outline-danger">Supprimer ce livre</a>
         </div>
     </div>

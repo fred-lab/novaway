@@ -11,6 +11,7 @@
         {% block header%}{% endblock %}
         <div class="container">
             {% block beadcrumb %}{% endblock %}
+            {{ include('_flash.message.html.twig') }}
             {% block body %}{% endblock %}
 
             <footer class="footer">
