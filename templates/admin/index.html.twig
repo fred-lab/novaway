@@ -1,15 +1,52 @@
-<h1>Index des médias</h1>
+{% extends 'base.html.twig' %}
 
-<h2>Listes des livres</h2>
+{% block title %}
+    Index des médias
+{% endblock %}
 
-{#{% for book in books %}#}
-    {#<li>{{ book }}</li>#}
-{#{% endfor %}#}
+{% block header %}
+    <div class="jumbotron">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="{{ path('admin_index') }}" class="breadcrumb-item active">Index</a>
+            </nav>
+            <h1 class="display-3">Index des médias</h1>
+            <p class="text-muted">Ce back office vous permet d'enregister des livres et des films (bluray ou dvd). Il vous sera possible d'éditer et supprimer ces médias !</p>
+        </div>
+    </div>
+{% endblock %}
 
-{#<h2>Listes des films</h2>#}
+{#{% block beadcrumb %}#}
+{#<nav class="breadcrumb">#}
+    {#<a href="#" class="breadcrumb-item active">Index</a>#}
+{#</nav>#}
+{#{% endblock %}#}
 
-{#{% for movie in movies %}#}
-    {#<li>{{ movie }}</li>#}
-{#{% endfor %}#}
 
-<body></body>
+{% block body %}
+<div class="row text-center placeholder">
+    <div class="col-md-6">
+        {{ include('_flash.message.html.twig') }}
+    </div>
+    <div class="col-md-6">
+        <h2>Listes des livres <span class="badge badge-pill badge-info">{{ books | length }}</span></h2>
+
+        <div class="list-group">
+            {% for book in books %}
+                <a href="#" class="list-group-item list-group-item-action">{{ book.title }} de {{ book.author }}</a>
+            {% endfor %}
+        </div>
+        <a href="{{ path('admin_book_create') }}" class="btn .btn-lg btn-outline-primary">Ajouter un livre</a>
+    </div>
+    <div class="col-md-6">
+        <h2>Listes des films <span class="badge badge-pill badge-info">{{ books | length }}</span></h2>
+
+        <div class="list-group">
+            {% for movie in movies %}
+                <a href="#" class="list-group-item list-group-item-action">{{ movie.title }} de {{ movie.director }}</a>
+            {% endfor %}
+        </div>
+        {#<a href="{{ path('admin_movie_create') }}" class="btn .btn-lg btn-outline-primary">Ajouter un film</a>#}
+    </div>
+</div>
+{% endblock %}
