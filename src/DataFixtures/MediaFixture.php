@@ -38,16 +38,16 @@ class MediaFixture extends Fixture
      * @var array
      */
     private $movies=[
-        ['director' => 'Steven Spielberg', 'title' => 'Catch me if you can',        'actors' => 'Leonardo Di Caprio, Tom Hanks'],
-        ['director' => 'Woody Allen',      'title' => 'Blue Jasmine',               'actors' => 'Cate Blanchett, Alec Baldwin'],
-        ['director' => 'Steven Spielberg', 'title' => 'Jurassic Park',              'actors' => 'Sam Neil, Samuel Jackson'],
-        ['director' => 'Woody Allen',      'title' => 'Everyone says I love you',   'actors' => 'Edward Norton, Drew Barrymore'],
-        ['director' => 'Stanley Kubrick',  'title' => 'Shinning',                   'actors' => 'Jack Nicholson, Shelley Duvall'],
-        ['director' => 'Martin Scorsese',  'title' => 'The departed',               'actors' => 'Jack Nicholson, Leonardo Di Caprio'],
-        ['director' => 'Martin Scorsese',  'title' => 'Killers of the flower Moon', 'actors' => 'Leonardo Di Caprio, Robert De Niro'],
-        ['director' => 'Martin Scorsese',  'title' => 'The wolf of wall street',    'actors' => 'Jean Dujardin, Leonardo Di Caprio'],
-        ['director' => 'Spike Lee',        'title' => '25th hour',                  'actors' => 'Edward Norton, Rosario Dawson'],
-        ['director' => 'Takashi Miike',    'title' => 'Crows Zero',                 'actors' => 'Shun Ogori, Takayuki Yamada']
+        ['type' => 'DVD', 'director' => 'Steven Spielberg', 'title' => 'Catch me if you can',        'actors' => 'Leonardo Di Caprio, Tom Hanks'],
+        ['type' => 'Bluray', 'director' => 'Woody Allen',      'title' => 'Blue Jasmine',               'actors' => 'Cate Blanchett, Alec Baldwin'],
+        ['type' => 'DVD', 'director' => 'Steven Spielberg', 'title' => 'Jurassic Park',              'actors' => 'Sam Neil, Samuel Jackson'],
+        ['type' => 'DVD', 'director' => 'Woody Allen',      'title' => 'Everyone says I love you',   'actors' => 'Edward Norton, Drew Barrymore'],
+        ['type' => 'Bluray', 'director' => 'Stanley Kubrick',  'title' => 'Shinning',                   'actors' => 'Jack Nicholson, Shelley Duvall'],
+        ['type' => 'Bluray', 'director' => 'Martin Scorsese',  'title' => 'The departed',               'actors' => 'Jack Nicholson, Leonardo Di Caprio'],
+        ['type' => 'DVD', 'director' => 'Martin Scorsese',  'title' => 'Killers of the flower Moon', 'actors' => 'Leonardo Di Caprio, Robert De Niro'],
+        ['type' => 'DVD', 'director' => 'Martin Scorsese',  'title' => 'The wolf of wall street',    'actors' => 'Jean Dujardin, Leonardo Di Caprio'],
+        ['type' => 'Bluray', 'director' => 'Spike Lee',        'title' => '25th hour',                  'actors' => 'Edward Norton, Rosario Dawson'],
+        ['type' => 'DVD', 'director' => 'Takashi Miike',    'title' => 'Crows Zero',                 'actors' => 'Shun Ogori, Takayuki Yamada']
     ];
 
     /**
@@ -74,7 +74,9 @@ class MediaFixture extends Fixture
 
         foreach ($this->movies as $movie){
             $fakeMovie = new Movie();
-            $fakeMovie->setIsan('ISAN ' . rand(10000, 99999))
+            $fakeMovie
+                ->setType($movie['type'])
+                ->setIsan('ISAN ' . rand(10000, 99999))
                 ->setTitle($movie['title'])
                 ->setDirector($movie['director'])
                 ->setActors($movie['actors'])

@@ -32,6 +32,7 @@
                 </div>
                 <p class="list-group-item">Date de parution : {{ book.releaseDate | date }}</p>
                 <p class="list-group-item">Nombre de page : {{ book.pages }}</p>
+                <p class="list-group-item">prix : {{ book.price }}</p>
                 <p class="list-group-item">N° ISNB : {{ book.isnb }}</p>
             </div>
             <a href="{{ path('admin_index') }}" class="btn .btn-lg btn-outline-primary">Retour à l'accueil</a>

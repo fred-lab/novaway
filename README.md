@@ -11,5 +11,5 @@ Installation
 - Editer le fichier .env pour renseigner les informations de connexion à la BDD, par exemple
     DATABASE_URL=mysql://root:root@127.0.0.1:3306/novaway
 - Creer la BDD : ```php bin/console doctrine:database:create```
-- Creer les tables : 
+- Executer les migration : ```php bin/console doctrine:migrations:migrate```
 - Ajouter les fixtures : ```php bin/console doctrine:fixtures:load```

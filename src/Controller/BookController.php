@@ -100,7 +100,6 @@ class BookController extends Controller
             'form' => $form->createView(),
             'book' => $book
         ]);
-
     }
 
     /**

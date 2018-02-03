@@ -40,10 +40,10 @@
 
         <div class="list-group">
             {% for movie in movies %}
-                <a href="#" class="list-group-item list-group-item-action">{{ movie.title }} de {{ movie.director }}</a>
+                <a href="{{ path('admin_movie_show', {'movie' : movie.id}) }}" class="list-group-item list-group-item-action">{{ movie.title }} de {{ movie.director }}</a>
             {% endfor %}
         </div>
-        {#<a href="{{ path('admin_movie_create') }}" class="btn .btn-lg btn-outline-primary">Ajouter un film</a>#}
+        <a href="{{ path('admin_movie_create') }}" class="btn .btn-lg btn-outline-primary">Ajouter un film</a>
     </div>
 </div>
 {% endblock %}

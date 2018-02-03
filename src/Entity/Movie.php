@@ -19,6 +19,13 @@ class Movie
     private $id;
 
     /**
+     * @ORM\Column(type="string", length=10)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     */
+    private $type;
+
+    /**
      * @ORM\Column(type="string", length=30, unique=true)
      * @Assert\NotNull()
      * @Assert\NotBlank()
@@ -96,6 +103,26 @@ class Movie
 
         return $this;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     * @return Movie
+     */
+    public function setType($type): Movie
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
 
     /**
      * @return mixed
