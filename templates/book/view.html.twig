@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ book.title }}
+{% endblock %}
+
+{% block header %}
+    <div class="jumbotron">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="{{ path('admin_index') }}" class="breadcrumb-item">Index</a>
+                <a href="{{ path('admin_book_show', { 'book': book.id}) }}" class="breadcrumb-item active">{{ book.title }}</a>
+            </nav>
+            <h1 class="display-3">{{ book.title }}</h1>
+            <p class="text-muted">{{ book.resume }}</p>
+            <p>{{ book.author }}</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="row text-center placeholder">
+        <div class="col-md-6">
+            <h2>Detail du livre :</h2>
+
+            <div class="list-group">
+                <p class="list-group-item">Titre : {{ book.title }}</p>
+                <p class="list-group-item">Auteur : {{ book.author }}</p>
+                <div class="list-group-item">
+                    <p>Résumé :</p>
+                    <p>{{ book.resume }}</p>
+                </div>
+                <p class="list-group-item">Date de parution : {{ book.releaseDate | date }}</p>
+                <p class="list-group-item">Nombre de page : {{ book.pages }}</p>
+                <p class="list-group-item">N° ISNB : {{ book.isnb }}</p>
+            </div>
+            <a href="{{ path('admin_index') }}" class="btn .btn-lg btn-outline-primary">Retour à l'accueil</a>
+            <a href="{{ path('admin_book_delete', {'book' : book.id}) }}" class="btn .btn-lg btn-outline-danger">Supprimer ce livre</a>
+        </div>
+    </div>
+{% endblock %}

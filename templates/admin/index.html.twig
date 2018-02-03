@@ -24,16 +24,16 @@
 
 
 {% block body %}
+<div class="row text-center placeholder>
+    {{ include('_flash.message.html.twig') }}
+</div>
 <div class="row text-center placeholder">
-    <div class="col-md-6">
-        {{ include('_flash.message.html.twig') }}
-    </div>
     <div class="col-md-6">
         <h2>Listes des livres <span class="badge badge-pill badge-info">{{ books | length }}</span></h2>
 
         <div class="list-group">
             {% for book in books %}
-                <a href="#" class="list-group-item list-group-item-action">{{ book.title }} de {{ book.author }}</a>
+                <a href="{{ path('admin_book_show', {'book' : book.id}) }}" class="list-group-item list-group-item-action">{{ book.title }} de {{ book.author }}</a>
             {% endfor %}
         </div>
         <a href="{{ path('admin_book_create') }}" class="btn .btn-lg btn-outline-primary">Ajouter un livre</a>
