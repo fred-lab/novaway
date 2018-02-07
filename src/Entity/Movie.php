@@ -182,11 +182,11 @@ class Movie
     }
 
     /**
-     * @return array
+     * @return mixed
      */
     public function getActors()
     {
-        return explode(';', $this->actors);
+        return $this->actors;
     }
 
     /**
