@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block header %}
+    <div class="jumbotron">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="{{ path('login') }}" class="breadcrumb-item active">Login</a>
+            </nav>
+            <h1 class="display-3">Login</h1>
+            <p class="text-muted">Formulaire de connexion !!</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+
+            {{ form_start(form) }}
+                {{ form_row(form._username) }}
+                {{ form_row(form._password) }}
+                <button type="submit" class="btn btn-success">Login <span class="fa fa-lock"></span></button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
