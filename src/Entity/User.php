@@ -31,7 +31,7 @@ class User implements UserInterface
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=50)
+     * @ORM\Column(type="string", length=100)
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Length(
@@ -43,7 +43,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=50, unique=true)     *
+     * @ORM\Column(type="string", length=50, unique=true)
      * @Assert\NotNull()
      * @Assert\NotBlank()
      * @Assert\Length(
@@ -57,7 +57,15 @@ class User implements UserInterface
     private $email;
 
     /**
-     * @ORM\Column(type="boolean", name="is_unique")
+     * @ORM\Column(type="string", length=100)
+     * @Assert\NotNull()
+     * @Assert\NotBlank()
+     * @Assert\Length(min="5", max="100")
+     */
+    private $roles;
+
+    /**
+     * @ORM\Column(type="boolean", name="is_active")
      */
     private $isActive;
 
@@ -88,8 +96,21 @@ class User implements UserInterface
      */
     public function getRoles()
     {
-        // TODO: Implement getRoles() method.
+        return explode(';' , $this->roles);
     }
+
+    /**
+     * @param array $roles
+     * @return User
+     */
+    public function setRoles(array $roles): User
+    {
+        $this->roles = implode(';', $roles);
+
+        return $this;
+    }
+
+
 
     /**
      * Returns the password used to authenticate the user.
@@ -101,7 +122,7 @@ class User implements UserInterface
      */
     public function getPassword()
     {
-        // TODO: Implement getPassword() method.
+        return $this->password;
     }
 
     /**
