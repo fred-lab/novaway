@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Form\LoginType;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,5 +32,14 @@ class SecurityController extends Controller
             'form'          => $form->createView(),
             'error'         => $error,
         ));
+    }
+
+    /**
+     * @Route("/logout", name="logout")
+     * @throws Exception
+     */
+    public function logout() : void
+    {
+        throw new Exception('Cette route n\est pas utilisé');
     }
 }

@@ -31,6 +31,13 @@ security:
                 check_path: login
                 username_parameter: login[_username]
                 password_parameter: login[_password]
+                default_target_path: admin_index
+                success_handler: App\Service\LoginSuccessHandler
+            logout:
+                path: logout
+                target: login
+                success_handler: App\Service\LogoutSuccessHandler
+                invalidate_session: false
     access_control:
         # require ROLE_ADMIN for /admin*
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY}
