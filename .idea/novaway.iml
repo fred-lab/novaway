@@ -25,6 +25,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/jdorn/sql-formatter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/package-versions" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ocramius/proxy-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/type-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
@@ -57,9 +60,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/profiler-pack" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-access" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/property-info" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/routing" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/security-bundle" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/serializer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/serializer-pack" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/stopwatch" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/twig-bridge" />
@@ -71,6 +77,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/webpack-encore-pack" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twig/twig" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-code" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/zendframework/zend-eventmanager" />
     </content>
