@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block admin %}
+    {{ include('admin/_user.area.html.twig') }}
+{% endblock %}
+
 {% block title %}
     Index des médias
 {% endblock %}
