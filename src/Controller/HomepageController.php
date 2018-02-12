@@ -10,8 +10,18 @@ class HomepageController extends Controller
 {
     /**
      * @Route("/", name="homepage")
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function index()
+    {
+        return $this->render('homepage/index.html.twig');
+    }
+
+    /**
+     * @Route("/{vue}", name="api_redirect", requirements={"vue" = "[\/\w\.-]*"})
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function redirectToHomepage()
     {
         return $this->render('homepage/index.html.twig');
     }
