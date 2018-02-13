@@ -103,7 +103,7 @@ class MovieController extends Controller
 
     /**
      * Delete a movie
-     * @Route("movie/delete/{movie}", name="admin_movie_delete", requirements={"movie"="\d+"})
+     * @Route("/movie/delete/{movie}", name="admin_movie_delete", requirements={"movie"="\d+"})
      * @param Movie $movie
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Index des médias
+{% endblock %}
+
+{% block body %}
+    <div id="app">
+        <novaway-app></novaway-app>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('build/js/app.js') }}"></script>
+{% endblock %}

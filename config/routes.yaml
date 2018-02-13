@@ -9,3 +9,7 @@ book:
 movie:
     resource: ../src/Controller/MovieController.php
     type: annotation
+
+homepage:
+    resource: ../src/Controller/HomepageController.php
+    type: annotation

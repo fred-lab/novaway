@@ -11,3 +11,8 @@
 ###< symfony/web-server-bundle ###
 
 \.idea/
+
+###> symfony/webpack-encore-pack ###
+/node_modules/
+/public/build/
+###< symfony/webpack-encore-pack ###

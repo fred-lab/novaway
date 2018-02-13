@@ -104,7 +104,7 @@ class BookController extends Controller
 
     /**
      * Delete a book
-     * @Route("book/delete/{book}", name="admin_book_delete", requirements={"book"="\d+"})
+     * @Route("/book/delete/{book}", name="admin_book_delete", requirements={"book"="\d+"})
      * @param Book $book
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
