@@ -9,7 +9,28 @@
 namespace App\EventListener;
 
 
-class MovieSubscriber
+use App\Entity\Movie;
+use Doctrine\Common\EventSubscriber;
+
+class MovieSubscriber implements EventSubscriber
 {
 
+    /**
+     * Returns an array of events this subscriber wants to listen to.
+     *
+     * @return array
+     */
+    public function getSubscribedEvents()
+    {
+        return [ 'postPersist', 'postUpdate'];
+    }
+
+    public function alertMail(LifecycleEventArgs $args)
+    {
+        $entity = $args->getEntity();
+
+        if($entity instanceof Movie){
+            //Todo
+        }
+    }
 }
