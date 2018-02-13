@@ -14,6 +14,8 @@ Vue.component('books-list', require('./components/BooksList.vue').default);
 Vue.component('book-detail', require('./components/BookDetail.vue').default);
 Vue.component('movies-list', require('./components/MoviesList.vue').default);
 Vue.component('movie-detail', require('./components/MovieDetail.vue').default);
+Vue.component('breadcrumb', require('./components/Beadcrumb.vue').default);
+Vue.component('searchbox', require('./components/SearchBox.vue').default);
 
 /* Initializing Vue */
 const app = new Vue({
@@ -21,6 +23,7 @@ const app = new Vue({
     store,
     router,
     created(){
+        console.log('Fetch Data')
         this.$store.dispatch('setMedias')
     },
     mounted () {

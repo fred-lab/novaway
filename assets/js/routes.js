@@ -26,6 +26,11 @@ const routes = [
         name: 'movie_detail',
         component: require('./components/MovieDetail.vue').default,
         prop: true
+    },
+    /** Redirect to homepage **/
+    {
+        path: '*',
+        redirect: '/'
     }
 ];
 
