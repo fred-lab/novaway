@@ -30,3 +30,6 @@ services:
     App\EventListener\BookSubscriber:
         tags:
             - { name: doctrine.event_subscriber }
+    App\EventListener\MovieSubscriber:
+        tags:
+            - { name: doctrine.event_subscriber }
