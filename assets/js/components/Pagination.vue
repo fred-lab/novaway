@@ -52,6 +52,10 @@
 </script>
 
 <style lang="scss">
+    .pagination{
+        margin-top: 0.5em;
+    }
+
     a.first::after {
         content:'...'
     }

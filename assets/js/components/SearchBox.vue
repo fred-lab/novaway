@@ -1,5 +1,5 @@
 <template>
-    <div class="row text-center placeholder">
+    <div class="row text-center placeholder searchbox">
         <input type="text" class="form-control" v-model="needle" placeholder="Rechercher un livre ou DVD/Bluray">
     </div>
 </template>
@@ -20,5 +20,7 @@
 </script>
 
 <style lang="scss">
-
+    .searchbox{
+        margin: 3em 0em;
+    }
 </style>

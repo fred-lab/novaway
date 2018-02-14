@@ -26,7 +26,7 @@
         },
         computed: {
             movie(){
-                return this.$store.getters.getMedias.movies.filter(movie => movie.title === this.$route.params.title)[0]
+                return this.$store.getters.getMovies.filter(movie => movie.title === this.$route.params.title)[0]
             }
         }
     }
