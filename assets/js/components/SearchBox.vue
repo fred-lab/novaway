@@ -1,6 +1,6 @@
 <template>
     <div class="row text-center placeholder">
-        <input type="text" class="form-control" v-model="needle">
+        <input type="text" class="form-control" v-model="needle" placeholder="Rechercher un livre ou DVD/Bluray">
     </div>
 </template>
 

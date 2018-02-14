@@ -6,7 +6,7 @@
                      class="list-group-item list-group-item-action">
             {{ movie.title }} de {{ movie.director }}
         </router-link>
-        <pagination :items="movies"></pagination>
+        <pagination items="movies"></pagination>
     </div>
 </template>
 
@@ -17,7 +17,8 @@
         },
         computed:{
             movies(){
-                return this.$store.getters.getMedias.movies
+                // return this.$store.getters.getMedias.movies
+                return this.$store.getters.getMovies
             }
         }
     }

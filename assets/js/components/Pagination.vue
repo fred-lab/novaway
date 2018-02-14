@@ -15,28 +15,38 @@
         props:['items'],
         data(){
             return {
-                itemsPerPage: 5,
                 totalPages: 1,
                 currentPage: 1
             }
         },
-        watch:{
-            items(newVal, oldVal){
-                this.totalPages = newVal.length
-            }
-        },
         computed:{
             pages(){
+                if(this.items === 'books'){
+                    this.totalPages = this.$store.getters.getNbBooks
+                }
+                if(this.items === 'movies'){
+                    this.totalPages = this.$store.getters.getNbMovies
+                }
+
                 return Math.ceil(this.totalPages / this.itemsPerPage)
+            },
+            itemsPerPage(){
+                return this.$store.getters.getItemsPerPage
             }
         },
         methods:{
             setPage(page){
                 this.currentPage = page
-            }
-        },
-        mounted(){
 
+                let index = this.currentPage * this.itemsPerPage - this.itemsPerPage
+
+                if(this.items === 'books'){
+                    this.$store.dispatch('setBooksIndex', index)
+                }
+                if(this.items === 'movies'){
+                    this.$store.dispatch('setMoviesIndex', index)
+                }
+            }
         }
     }
 </script>
