@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Ajouter un DVD/Bluray
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block beadcrumb %}
+<nav class="breadcrumb">
+    <a href="{{ path('admin_index') }}" class="breadcrumb-item">Index</a>
+    <a href="{{ path('admin_movie_create') }}" class="breadcrumb-item active">Ajouter un DVD/Bluray</a>
+</nav>
+{% endblock %}
+
+{% block body %}
+    <div class="row text-center placeholder">
+        <div class="col-md-6">
+            <h2>Ajouter un DVD/Bluray</h2>
+
+            {{ include('movie/_form.html.twig') }}
+        </div>
+    </div>
+{% endblock %}

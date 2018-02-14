@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col align-self-end">
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <p>
+                    <h5>Bienvenue {{ app.user.username }} !
+                        <a href="{{ path('logout') }}" class="btn .btn-sm btn-outline-danger">Logout <span class="fa fa-unlock"></span></a>
+                    </h5>
+                </p>
+            {% else %}
+                <a href="{{ path('login') }}" class="btn .btn-sm btn-outline-success">Login <span class="fa fa-lock"></span></a>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -1,3 +1,15 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+admin:
+    resource: ../src/Controller/AdminController.php
+    type: annotation
+
+book:
+    resource: ../src/Controller/BookController.php
+    type: annotation
+
+movie:
+    resource: ../src/Controller/MovieController.php
+    type: annotation
+
+homepage:
+    resource: ../src/Controller/HomepageController.php
+    type: annotation
