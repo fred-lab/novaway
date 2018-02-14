@@ -16,6 +16,7 @@ Vue.component('movies-list', require('./components/MoviesList.vue').default);
 Vue.component('movie-detail', require('./components/MovieDetail.vue').default);
 Vue.component('breadcrumb', require('./components/Beadcrumb.vue').default);
 Vue.component('searchbox', require('./components/SearchBox.vue').default);
+Vue.component('pagination', require('./components/Pagination.vue').default);
 
 /* Initializing Vue */
 const app = new Vue({

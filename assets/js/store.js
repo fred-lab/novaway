@@ -12,6 +12,7 @@ Vue.use(Vuex)
 /* store the data */
 export const state = {
     medias: [],
+    filteredList: {},
     needle: ''
 }
 
@@ -27,8 +28,6 @@ export const getters = {
      */
     getMedias : state => {
         if(state.needle){
-            let newlist = {}
-
             let filterList = (array) => {
                 return array.filter(
                     book => Object.values(book).find(
@@ -37,10 +36,10 @@ export const getters = {
                 )
             }
 
-            newlist.books = filterList(state.medias.books)
-            newlist.books = filterList(state.medias.books)
+            state.filteredList.books = filterList(state.medias.books)
+            state.filteredList.movies = filterList(state.medias.movies)
 
-            return newlist
+            return state.filteredList
         }
         return state.medias
     }
