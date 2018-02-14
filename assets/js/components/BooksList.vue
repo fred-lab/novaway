@@ -4,6 +4,8 @@
                      class="list-group-item list-group-item-action">
             {{ book.title }} de {{ book.author }}
         </router-link>
+
+        <pagination items="books"></pagination>
     </div>
 </template>
 
@@ -14,7 +16,7 @@
         },
         computed:{
             books(){
-                return this.$store.getters.getMedias.books
+                return this.$store.getters.getBooks
             }
         }
     }

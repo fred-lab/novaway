@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/js/app.css') }}">
+{% endblock %}
+
 {% block title %}
     Index des médias
 {% endblock %}

@@ -24,7 +24,7 @@
         },
         computed: {
             book(){
-                return this.$store.getters.getMedias.books.filter(book => book.title === this.$route.params.title)[0]
+                return this.$store.getters.getBooks.filter(book => book.title === this.$route.params.title)[0]
             }
         }
     }

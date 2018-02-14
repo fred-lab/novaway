@@ -1,5 +1,6 @@
 <template>
     <section class="container">
+        <breadcrumb></breadcrumb>
         <router-view></router-view>
     </section>
 </template>
