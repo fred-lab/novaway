@@ -13,3 +13,13 @@ Installation
 - Creer la BDD : ```php bin/console doctrine:database:create```
 - Executer les migration : ```php bin/console doctrine:migrations:migrate```
 - Ajouter les fixtures : ```php bin/console doctrine:fixtures:load```
+
+- Installer les dépendances via NPM : ```npm install```
+- Compiler les assests : ```npm run dev```
+
+L'application est disponible à l'adresse : http://localhost:8000/
+La partie "admin" est disponible à l'adresse : http://localhost:8000/admin
+
+Le compte admin :
+ - user : admin
+ - mdp : test
